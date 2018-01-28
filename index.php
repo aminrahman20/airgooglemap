@@ -1,1 +1,1 @@
-<?php include_once("airgooglemap.html")?>
+<?php include_once("mapamin_final.html")?>
