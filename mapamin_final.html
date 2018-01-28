@@ -30,7 +30,7 @@
 
       // First, create an object containing LatLng and population for each city.
 	  var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "https://airamin.herokuapp.com/time", false ); // false for synchronous request
+    xmlHttp.open( "GET", "http://airamin.herokuapp.com/time", false ); // false for synchronous request
     xmlHttp.send( null );
     alart(xmlHttp.responseText);
 	  
