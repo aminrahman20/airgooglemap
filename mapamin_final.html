@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+	  <script src="jquery-3.3.1.min.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Circles</title>
@@ -29,10 +30,18 @@
       // America.
 
       // First, create an object containing LatLng and population for each city.
-	  var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "http://airamin.herokuapp.com/time", false ); // false for synchronous request
-    xmlHttp.send( null );
-    alart(xmlHttp.responseText);
+	  alert("hello");
+
+    //    var url = "https://airamin.herokuapp.com/time";
+
+    var url = "https://airamin.herokuapp.com/time";
+
+    $.ajax({
+        url: url,
+        success: function (result) {
+            alert(result)
+        }
+    });
 	  
       var citymap = {
         shamoli: {
