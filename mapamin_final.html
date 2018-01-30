@@ -20,38 +20,51 @@
     </style>
   </head>
   <body>
-		<div id="" style= "text-align:center; margin: 20px;"><button  type="button" onclick="initMapCo()">Carbon Monoxide</button>
-			 <button type="button" onclick="initMapDust()">Dust</button></div>
+		<div id="" style= "text-align:center; margin: 20px;"><button  type="" onclick="">Carbon Monoxide</button>
+			 
+			 </div>
 			 
     <div id="map" style= "margin: 20px;height:90%;"></div>
     
-    <script>
-      // This example creates circles on the map, representing populations in North
+    <script defer>
+      // This example creates circles on the map, representing populations in North  <button type="button" onclick="initMapDust()">Dust</button>
       // America.
 
       // First, create an object containing LatLng and population for each city.
-	  alert("hello");
+	 
 
     //    var url = "https://airamin.herokuapp.com/time";
 
     var url = "https://airamin.herokuapp.com/time";
-
-    $.ajax({
-        url: url,
-        success: function (result) {
-		var data = JSON.parse('+result+')
-            alert(data.co)
-		alert(data.du)
-        }
-    });
+	var co_shamoli=0;
+    
+	
+	
+			$.ajax({
+			url: url,
+			async: false,
+			success: function (result) {
+				co_shamoli=result;
+			
+			}
+		});
+		
+		
+	
 	  
-      var citymap = {
+      
+
+	   function initMap() {
+			// Create the map.
+			// alert(co_shamoli);
+			
+			var citymap = {
         shamoli: {
           center: {lat: 23.7718, lng: 90.3631},//{lat: 41.878, lng: -87.629},
-          co: 50,
+          co: co_shamoli,
 		  dust: 220
-        },
-        mirpur: {
+        }
+        /* mirpur: {
           center: {lat: 23.8223, lng: 90.3654},
           co: 200,
 		  dust: 120
@@ -65,11 +78,8 @@
           center: {lat: 23.7837, lng: 90.3442},
           co: 250,
 		  dust: 20
-        }
+        } */
       };
-
-	   function initMap() {
-			// Create the map.
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
           center: {lat: 23.772035, lng: 90.362446},
@@ -81,6 +91,8 @@
         for (var city in citymap) {
           // Add the circle for this city to the map.
 				// for green
+				
+				
 			  if(citymap[city].co > 1 && citymap[city].co < 200){
 					 var cityCircle = new google.maps.Circle({
 					 
@@ -255,9 +267,11 @@
          
         }
       }
+	  
+	  
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOGV0h-9hUnELHqzv2wq-cMwboe6ZzlJE&callback=initMap">
+    <script  defer
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOGV0h-9hUnELHqzv2wq-cMwboe6ZzlJE&callback=initMap">
     </script>
   </body>
 </html>
