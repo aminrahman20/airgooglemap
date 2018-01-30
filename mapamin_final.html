@@ -39,7 +39,7 @@
     $.ajax({
         url: url,
         success: function (result) {
-		var data = JSON.parse(result)
+		var data = JSON.parse('+result+')
             alert(data.co)
 		alert(data.du)
         }
