@@ -93,7 +93,7 @@
 				// for green
 				
 				
-			  if(citymap[city].co > 1 && citymap[city].co < 200){
+			  if(citymap[city].co > 0 && citymap[city].co < 9){
 					 var cityCircle = new google.maps.Circle({
 					 
 					strokeColor: '#008000',
@@ -103,11 +103,11 @@
 					fillOpacity: 0.25,
 					map: map,
 					center: citymap[city].center,
-					radius: Math.sqrt(citymap[city].co) * 50
+					radius: Math.sqrt(citymap[city].co) + 5000
 				 });
 				}
 				// for yellow
-			  if(citymap[city].co > 200 && citymap[city].co < 400){
+			  if(citymap[city].co > 9 && citymap[city].co < 100){
 					 var cityCircle = new google.maps.Circle({
 					
 					 
@@ -118,12 +118,12 @@
 					fillOpacity: 0.25,
 					map: map,
 					center: citymap[city].center,
-					radius: Math.sqrt(citymap[city].co) * 50
+					radius: Math.sqrt(citymap[city].co) + 5000
 					
 				  });
 			  }
 			    // for red
-			  if(citymap[city].co > 400 ){
+			  if(citymap[city].co > 100 ){
 					 var cityCircle = new google.maps.Circle({
 					
 					 
@@ -134,7 +134,7 @@
 					fillOpacity: 0.25,
 					map: map,
 					center: citymap[city].center,
-					radius: Math.sqrt(citymap[city].co) * 50
+					radius: Math.sqrt(citymap[city].co) + 5000
 					
 				  });
 			  }
