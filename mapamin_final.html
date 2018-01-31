@@ -20,7 +20,22 @@
     </style>
   </head>
   <body>
-		<div id="" style= "text-align:center; margin: 20px;"><button  type="" onclick="">Carbon Monoxide</button>
+	  <script>
+		   var url = "https://airamin.herokuapp.com/time";
+	var co_shamoli=0;
+    
+	
+	
+			$.ajax({
+			url: url,
+			async: false,
+			success: function (result) {
+				co_shamoli=result;
+			
+			}
+		});
+	  </script>
+		<div id="" style= "text-align:center; margin: 20px;"><div>Concentration of Carbon Monoxide = <script>document.write(co_shamoli+" ")</script>ppm</div>
 			 
 			 </div>
 			 
@@ -35,19 +50,7 @@
 
     //    var url = "https://airamin.herokuapp.com/time";
 
-    var url = "https://airamin.herokuapp.com/time";
-	var co_shamoli=0;
-    
-	
-	
-			$.ajax({
-			url: url,
-			async: false,
-			success: function (result) {
-				co_shamoli=result;
-			
-			}
-		});
+   
 		
 		
 	
