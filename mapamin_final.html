@@ -103,7 +103,7 @@
 					fillOpacity: 0.25,
 					map: map,
 					center: citymap[city].center,
-					radius: Math.sqrt(citymap[city].co) * 100
+					radius: Math.sqrt(citymap[city].co) * 50
 				 });
 				}
 				// for yellow
@@ -118,12 +118,12 @@
 					fillOpacity: 0.25,
 					map: map,
 					center: citymap[city].center,
-					radius: Math.sqrt(citymap[city].co) * 100
+					radius: Math.sqrt(citymap[city].co) * 50
 					
 				  });
 			  }
 			    // for red
-			  if(citymap[city].co > 400 && citymap[city].co < 600){
+			  if(citymap[city].co > 400 ){
 					 var cityCircle = new google.maps.Circle({
 					
 					 
@@ -134,7 +134,7 @@
 					fillOpacity: 0.25,
 					map: map,
 					center: citymap[city].center,
-					radius: Math.sqrt(citymap[city].co) * 100
+					radius: Math.sqrt(citymap[city].co) * 50
 					
 				  });
 			  }
